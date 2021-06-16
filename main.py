@@ -13,7 +13,8 @@ print(hangman_art.logo)
 
 #create a blank space
 display = []
-for _ in range(len(chosen_word)):
+word_length = len(chosen_word)
+for _ in range(word_length):
   display += "_"
 
 end_of_game = False
@@ -24,9 +25,8 @@ while not end_of_game:
     print(f"You've already guessed that letter -{guess}- ")
 
   #Check if the letter the user guessed is one of the letters in the chosen_word.
-  for position in range(len(chosen_word)):
+  for position in range(word_length):
     letter = chosen_word[position]
-    #print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}")
     if letter == guess:
       display[position] = letter
 
